@@ -15,3 +15,14 @@ def display_books():
 
 if __name__ == "__main__":
     display_books()
+
+def search_book(keyword):
+    found = False
+
+    for book in books:
+        if keyword.lower() in book["title"].lower():
+            print(f"{book['title']} - {book['author']}")
+            found = True
+
+    if not found:
+        print("No book found.")
